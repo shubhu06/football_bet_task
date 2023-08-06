@@ -1,0 +1,13 @@
+<div class="container  custome-container w-50 mt-4">
+
+  <h6>Football</h6>
+  <!-- {{this._state.date_wise_data |json}} -->
+  <div class="card p-2">
+    <div *ngFor="let item of this._state.leagueIds" class="m-1">
+      <!-- {{item |json}} -->
+      <app-display-card leageId="{{item.id}}" country="{{item.country}}"
+        leageName="{{item.leagueName}} "></app-display-card>
+    </div>
+  </div>
+
+</div>

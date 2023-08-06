@@ -1,0 +1,7 @@
+.custom-match:hover{
+cursor: pointer;
+}
+
+.custom-match{
+  border-bottom: 1px solid gray;
+}

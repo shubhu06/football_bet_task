@@ -1,0 +1,23 @@
+<!-- <p>{{leageName}}</p>
+<div *ngFor="let data of this._state.date_wise_data">
+
+  <div *ngIf="leageId == data.LeagueId">
+    {{data.MatchName}} {{leageId}}{{data.LeagueId}}
+  </div>
+</div>
+
+<hr /> -->
+
+<div class="card  p-2">
+  <div class="bg-danger pt-1">
+    <p class="text-center text-white ">{{country |titlecase}} - {{leageName |titlecase}}</p>
+  </div>
+  <div class="" *ngFor="let data of this._state.date_wise_data;" routerLink="/matches/{{data.MatchId}}">
+    <!-- {{data | json}} -->
+    <div class="text-center table-success row custom-match m-2 " *ngIf="leageId == data.LeagueId">
+      <div class="col-4 pb-1">{{data.Team1Name}}</div>
+      <div class="col-4 pb-1 text-danger">{{data.localDateTime | date }} - {{data.MatchTime }}</div>
+      <div class="col-4 pb-1">{{data.Team2Name}}</div>
+    </div>
+  </div>
+</div>

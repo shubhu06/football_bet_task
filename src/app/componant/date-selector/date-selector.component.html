@@ -1,0 +1,12 @@
+<div class="container-fluid container-custom mt-4">
+  <nav class="navbar navbar-expand bg-light">
+    <div class="container-fluid">
+      <!-- {{this.dates | json}} -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item ps-3" *ngFor="let date of this.dates ; let i = index">
+          <button type="button"  id="id{{i}}" class="btn btn-sm btn-outline-danger" (click)="get_date(i)">{{date | date: 'EEEE, d MMMM'}}</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

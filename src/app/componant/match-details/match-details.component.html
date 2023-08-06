@@ -1,0 +1,65 @@
+<div class="container">
+  <p class="text-danger p-0" routerLink="/home" style="font-size: 30px;"> <i class="bi bi-arrow-left-circle-fill"></i>
+  </p>
+  <div class="match-details row mt-1">
+    <div class="col-6 bg-danger text-white text-center">
+      <h5 *ngFor="let info of this._state.match_id_wise_data">
+        {{ info.localDateTime | date }}
+      </h5>
+    </div>
+    <div class="col-6 bg-dark text-white text-center">
+      <h5 *ngFor="let info of this._state.match_id_wise_data">
+        {{ info.MatchName }}
+      </h5>
+    </div>
+  </div>
+  <!--  -->
+  <div class="container ">
+    <div class="row">
+      <div class="col-6">
+        <label for="" class="col-form-label"> <b>Selection :</b> </label>
+        <select class="form-select w-50 text-center" aria-label="Default select example"
+          (change)="onMarketSelectionChange($event)">
+          <option value="{{market.MarketId}}" *ngFor="let market of this._state.all_market_data">{{market.MarketName}}
+          </option>
+        </select>
+      </div>
+      <div class="col-6">
+        <label for="" class="col-form-label"> <b>Legs :</b> </label>
+        <select class="form-select w-50 text-center" aria-label="Default select example"
+          (change)="onLegSelectionChange($event)">
+          <option value="{{legs.selectionId}}" *ngFor="let legs of this._state.all_selection_legs">
+            {{legs.selectionValue}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="container custom-table-data mt-4" *ngIf="this._state.all_BetBuilderBet_data">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr>
+          <th scope="col">Pick</th>
+          <th scope="col">Market</th>
+          <th scope="col">Outcome</th>
+          <th scope="col">Key Stat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of this._state.all_BetBuilderBet_data.BetBuilderSelections ; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{data.Market}}</td>
+          <td>{{data.Selection}}</td>
+          <td>{{data.RTB}}</td>
+        </tr>
+    </table>
+
+    <div class="container mt-4">
+      <h4>Bet Builders Odds : {{this._state.all_BetBuilderBet_data.TotalOdds}} </h4>
+    </div>
+  </div>
+
+</div>
+
+<!-- {{this._state.all_BetBuilderBet_data | json}} -->
