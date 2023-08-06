@@ -24,7 +24,7 @@ export class RestService {
   }
 
   get_all_BetBuilderBets(data:any){
-    console.log(data,"get");
+    // console.log(data,"get");
     return this._http.get(`${this.url}/GetBetBuilderBets?sports=1&matchId=${data.matchId}&marketId=${data.MarketId}&legs=${data.legId}&language=en`)
 
   }

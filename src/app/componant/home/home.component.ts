@@ -8,14 +8,12 @@ import { StateService } from 'src/app/services/state.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(private _state:StateService , private _rest:RestService){}
+  constructor(private _state: StateService, private _rest: RestService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this._state.allfixture();
 
-
-
-}
+  }
 
 
 }

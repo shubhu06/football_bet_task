@@ -13,7 +13,7 @@ export class MatchListComponent {
 
   ngOnInit(): void {
 
-    // this._state.filterDataByDate()
+
   }
 
 
